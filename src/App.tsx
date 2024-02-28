@@ -1,15 +1,16 @@
-import  { useEffect } from "react";
-import "./App.css";
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import { Posts } from './components/Posts';
+import { Home } from './components/Home';
 const App = () => {
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
-      .then((response) => response.json())
-      .then((json) => console.log(json));
-  },[]);
   return (
-    <div>
-      <h1 className="heading__one">React application!!!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        
+      </Routes>
+    </Router>
   );
 };
 
