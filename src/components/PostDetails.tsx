@@ -17,8 +17,10 @@ export const PostDetails: React.FC = () => {
         <p className="detailsBody">{posts?.body}</p>
       </div>
       <div className="commentsContainer">
+        <h1 className='commentsHeader'>Comments</h1>
         {comments?.map((comment) => (
           <div key={comment?.id} className="commentsDetails">
+
             <h2 className="commentName">{comment?.name}</h2>
             <p className="commentEmail">{comment.email}</p>
             <p className="commentBody">{comment?.body}</p>
