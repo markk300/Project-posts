@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useGetApiPostsQuery } from '../features/api/apiPosts';
 import { Posts } from './Posts';
+import useLogComponent from '../hooks/useLogComponent';
 
-export const Home = () => {
+export const Home: React.FC = () => {
   const { data: posts, isLoading } = useGetApiPostsQuery();
   const [search, setSearch] = useState('');
-
+  useLogComponent({ componentName: 'Home' });
   if (isLoading) return <div className='loader'></div>;
   return (
     <div>

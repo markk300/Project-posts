@@ -1,8 +1,10 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useGetApiPostsQuery, useGetCommentsByIdQuery } from '../features/api/apiPosts';
+import useLogComponent from '../hooks/useLogComponent';
 
 export const PostDetails: React.FC = () => {
+  useLogComponent({componentName:'PostDetails'})
   const { id } = useParams<{ id: string }>();
   const postId = parseInt(id || '');
   const { data: posts } = useGetApiPostsQuery(undefined, {
