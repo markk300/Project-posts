@@ -23,7 +23,7 @@ module.exports = {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
-    ]
+    ],
   },
   devtool: prod ? undefined : 'source-map',
   plugins: [
@@ -32,4 +32,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin(),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

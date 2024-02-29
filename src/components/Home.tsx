@@ -6,7 +6,7 @@ export const Home = () => {
   const { data: posts, isLoading } = useGetApiPostsQuery();
   const [search, setSearch] = useState('');
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <div className='loader'></div>;
   return (
     <div>
       <div className='search'>

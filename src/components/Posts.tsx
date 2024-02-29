@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 interface Post {
   id: number;
   title: string;
+  body:string
  }
  
  interface PostsProps {
@@ -13,10 +16,10 @@ interface Post {
        {data?.map((item) => (
          <div key={item.id} className="posts">
            <div>
-             <h1>{item.title}</h1>
+             <Link to={`/post/${item.id}`} className="postTitle">{item.title}</Link>
            </div>
            <div>
-             <p>User:{item.id}</p>
+             <p className="user">User:{item.id}</p>
            </div>
          </div>
        ))}
